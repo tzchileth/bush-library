@@ -1,0 +1,286 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.grid-container {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    background-color: rgb(245, 240, 240);
+}
+
+.grid-container>.header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: 50px;
+    align-items: center;
+    gap: 50px;
+    background-color: #bccad6;
+}
+
+.grid-container>.header>.logo {
+    justify-self: start;
+}
+
+.grid-container>.header>.addBook {
+    display: grid;
+    justify-items: end;
+}
+
+.grid-container>.card-container {
+    display: grid;
+    background-color: #e5e8ee;
+    grid-template-columns: repeat(auto-fit, minmax(316.5px, 316.5px));
+    grid-auto-rows: 220px;
+    min-height: 80vh;
+    gap: 10px;
+}
+
+.grid-container>.footer {
+    display: grid;
+    align-items: center;
+    justify-self: center;
+    grid-auto-rows: 50px;
+}
+
+button {
+    background: #3882F6;
+    color: white;
+    font-family: Roboto, sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* add card to grid container through js */
+.card {
+    display: grid;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border-left: 5px solid goldenrod;
+    padding: 10px;
+}
+
+.card>.bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* remove button style */
+.styled {
+    border: 0;
+    padding: 0 20px;
+    font-size: 15px;
+    padding: 5px 15px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2) 30%,
+            rgba(0, 0, 0, 0));
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow:
+        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.author {
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+    text-align: center;
+    color: #092e69;
+    font-weight: bold;
+}
+
+/* add title to card div through js */
+.title {
+    font-size: 16px;
+    text-align: left;
+    font-weight: normal;
+}
+
+/* add pages to card div through js */
+.pages {
+    font-size: 16px;
+    text-align: left;
+    font-weight: normal;
+}
+
+#js-close {
+    background: #3882F6;
+    color: white;
+    font-family: Roboto, sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: 15px;
+    margin: 0;
+}
+
+#dialog {
+    margin: auto;
+    width: 250px;
+    height: 300px;
+    justify-content: center;
+    background-color: rgb(184, 184, 201);
+    border-color: #978223;
+}
+
+form {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 300px;
+}
+
+/* style for dialog toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 8px;
+}
+
+/* styles for card toggle switch */
+.cardLabelSwitch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.cardLabelSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cardSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.cardSlider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.cardLabelSwitch input:checked+.cardSlider {
+    background-color: #2196F3;
+}
+
+.cardLabelSwitch input:focus+.cardSlider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.cardLabelSwitch input:checked+.cardSlider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.cardSlider.cardRound {
+    border-radius: 34px;
+}
+
+.cardSlider.cardRound:before {
+    border-radius: 50%;
+}
+
+.cardToggleLabel {
+    margin-left: 5px;
+    position: relative;
+    top: 8px;
+}
