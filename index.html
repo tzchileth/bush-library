@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Project</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/index.js" defer></script>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <div class="logo">Bushcat Library</div>
+            <div class="addBook">
+                <button type="button" id="newBook">NEW BOOK</button>
+            </div>
+        </div>
+        <div class="card-container">
+
+        </div>
+        <dialog id="dialog">
+            <form method="dialog">
+                <p>
+                    <label for="author">
+                        Author <br>
+                        <input type="text" id="author" required>
+                    </label>
+                </p>
+                <p>
+                    <label for="title">
+                        Title <br>
+                        <input type="text" id="title" required>
+                    </label>
+                </p>
+                <p>
+                    <label for="pages">
+                        Pages <br>
+                        <input type="text" id="pages" required>
+                    </label>
+                </p>
+                <p>
+                    <label class="switch">
+                        <input class="toggleSwitch" type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-label">READ</span>
+                </p>
+                <div>
+                    <input type="submit" id="js-close" value="Confirm">
+                </div>
+            </form>
+        </dialog>
+        <div class="footer">
+            <div>Copyright &#169; <span>Machemileche</span> 2024</div>
+        </div>
+    </div>
+</body>
+
+</html>
